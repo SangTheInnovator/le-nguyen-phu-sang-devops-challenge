@@ -6,7 +6,7 @@ The system is designed with **high availability, low-latency, and scalability** 
 
 #### Architecture Diagram
 
-#### Architure Diagram Components
+#### Architecture Diagram Components
 - **Clients (Users, API Intergations)**
   - Access the system via Web, Mobile App, or REST APIs.
 - **AWS Global CDN (Amazon CloudFront)**
@@ -18,7 +18,7 @@ The system is designed with **high availability, low-latency, and scalability** 
 - **Microservices Layer (ECS Fargate, EKS)**
   - **User Management (Cognito/RDS PostgreSQL):**
     - Handles user authentication, authorization, and profile management.
-    - **Amazon Cognito:** Manages user sign-up, sign-in, multi-factor authentication (MFA), and identification parties (Goggle, Apple, etc.).
+    - **Amazon Cognito:** Manages user sign-up, sign-in, multi-factor authentication (MFA), and identification parties (Google, Apple, etc.).
     - **RDS PostgreSQL:** Stores user data, permissions, and preferences in a relational database.
     - Ensures secure authentication and role-based access control.
   - **Wallet & Funds Service (DynamoDB/PostgreSQL):**
@@ -64,3 +64,6 @@ The system is designed with **high availability, low-latency, and scalability** 
   - IAM Roles & Policies - Secure access control.
   - Secrets Manager - Manages API keys, database credentials.
 
+### Why each cloud service is used and what alternatives considered
+
+### Plans for scaling when the product grows
