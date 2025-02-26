@@ -24,7 +24,7 @@ The system is designed with **high availability, low-latency, and scalability** 
   - **Wallet & Funds Service (DynamoDB/PostgreSQL):**
     - Manages user account balances, deposit, withdrawals, and transaction history.
     - **DynamoDB(NoSQL, high-performance):**
-      - Handles real-time walet balance updates.
+      - Handles real-time wallet balance updates.
       - Processes high-frequency transactions with low-latency reads/write.
     - **PostgreSQL:**
       - Ensures data integrity for critical financial records.
@@ -33,7 +33,7 @@ The system is designed with **high availability, low-latency, and scalability** 
     - **DynamoDB (high-speed storage for active orders):**
       - Stores pending and active orders in real time.
       - Enables quick lookups for order book processing.
-    - **Aurora PostgreSQL (RDBMS for historical records & analytics):
+    - **Aurora PostgreSQL (RDBMS for historical records & analytics):**
       - Stores executed orders, cancellations, and trade history.
       - Supports reporting, compliance, and reconciliation tasks.
   - **Market Data Service (Elasticsearch/OpenSearch):**
