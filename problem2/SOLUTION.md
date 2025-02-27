@@ -5,7 +5,7 @@
 The system is designed with **high availability, low-latency, and scalability** in mind, using a **microservices-based architecture**, deployed across multiple AWS Availability Zones (AZs). Below is an architecture diagram of the services used and what role they play in the system.
 
 #### Architecture Diagram
-
+      
 #### Architecture Diagram Components
 - **Clients (Users, API Intergations)**
   - Access the system via Web, Mobile App, or REST APIs.
@@ -65,5 +65,16 @@ The system is designed with **high availability, low-latency, and scalability** 
   - Secrets Manager - Manages API keys, database credentials.
 
 ### Why each cloud service is used and what alternatives considered
-
+| **Service** | **Why Used?** | **Alternative Considered** |
+|------------|-------------|---------------------------|
+| **Amazon CloudFront** | Global CDN for caching assets, reducing latency. | Cloudflare CDN |
+| **Amazon API Gateway** | Secure API management and request throttling. | Kong API Gateway, Nginx |
+| **Amazon Cognito** | Managed authentication (MFA, SSO, OAuth). | Auth0, Firebase Authentication |
+| **Amazon RDS (PostgreSQL)** | Strong consistency, relational storage. | MySQL, Aurora Serverless |
+| **Amazon DynamoDB** | Low-latency NoSQL storage for real-time balances, orders. | MongoDB Atlas, Cassandra |
+| **Amazon OpenSearch (Elasticsearch)** | Real-time market data indexing. | Algolia, Solr |
+| **Amazon EKS (Kubernetes)** | Orchestrates trading microservices. | ECS Fargate, Google Kubernetes Engine (GKE) |
+| **Amazon MSK (Kafka)** | Event streaming for order execution, price updates. | RabbitMQ, Apache Pulsar |
+| **Amazon ElastiCache (Redis)** | Caches hot data, reduces database load. | Memcached, self-hosted Redis |
+| **AWS WAF + Shield** | Protects APIs against cyber threats. | Cloudflare WAF, Imperva |
 ### Plans for scaling when the product grows
