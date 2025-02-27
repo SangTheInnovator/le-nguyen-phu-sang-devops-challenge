@@ -5,7 +5,7 @@
 The system is designed with **high availability, low-latency, and scalability** in mind, using a **microservices-based architecture**, deployed across multiple AWS Availability Zones (AZs). Below is an architecture diagram of the services used and what role they play in the system.
 
 #### Architecture Diagram
-![architecture_diagram](./AWS Trading System Diagram.png)
+[architecture_diagram](./AWS Trading System Diagram.png)
 
 #### Architecture Diagram Components
 - **Clients (Users, API Intergations)**
