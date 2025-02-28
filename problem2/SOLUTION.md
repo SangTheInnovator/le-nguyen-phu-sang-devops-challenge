@@ -83,6 +83,7 @@ The system is designed with **high availability, low-latency, and scalability** 
 As the trading system scales with increasing user demand, the architecture must evolve to handle **higher traffic, ensure ultra-low latency, and maintain cost efficiency**. Below is a structured scaling strategy:
 
 #### 1.Horizontal and vertical scaling
+
 a) Horizontal scaling (Auto-scaling)
 - Microservices Scaling:
   - Use AWS Auto Scaling for ECS Fargate / EKS pods to dynamically increase or decrease instances based on demand.
@@ -92,6 +93,7 @@ a) Horizontal scaling (Auto-scaling)
   - DynamoDB On-Demand Mode for automatic scaling of read/write capacity.
 - Cache Scaling:
   - ElastiCache (Redis) Cluster Mode to distribute cache load across multiple nodes.
+    
 b) Vertical Scaling (Resource Optimization)
 - Instance Upgrades:
   - Upgrade EC2 instances (if used) with more CPU, RAM as needed.
