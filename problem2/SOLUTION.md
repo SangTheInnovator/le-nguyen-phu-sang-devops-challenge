@@ -83,7 +83,7 @@ The system is designed with **high availability, low-latency, and scalability** 
 As the trading system scales with increasing user demand, the architecture must evolve to handle **higher traffic, ensure ultra-low latency, and maintain cost efficiency**. Below is a structured scaling strategy:
 
 #### 1.Horizontal and vertical scaling
-**a) Horizontal scaling (Auto-scaling)**
+a) Horizontal scaling (Auto-scaling)
 - Microservices Scaling:
   - Use AWS Auto Scaling for ECS Fargate / EKS pods to dynamically increase or decrease instances based on demand.
   - Configure HPA (Horizontal Pod Autoscaler) in Kubernetes to scale trading engine replicas.
@@ -92,7 +92,7 @@ As the trading system scales with increasing user demand, the architecture must 
   - DynamoDB On-Demand Mode for automatic scaling of read/write capacity.
 - Cache Scaling:
   - ElastiCache (Redis) Cluster Mode to distribute cache load across multiple nodes.
-**b) Vertical Scaling (Resource Optimization)**
+b) Vertical Scaling (Resource Optimization)
 - Instance Upgrades:
   - Upgrade EC2 instances (if used) with more CPU, RAM as needed.
   - Optimize memory-intensive operations with Graviton-based EC2 instances for cost efficiency.
@@ -113,14 +113,32 @@ As the trading system scales with increasing user demand, the architecture must 
 #### 3. Database Optimization & Partitioning
 - Aurora PostgreSQL Multi-Region Replication
   - Set up read replicas in different regions for global performance.
-qqqqqqqqqqqqqqqqqqqqqqqqqqq
+- Time-Series Data Optimization
+  - Store historical trade data in Amazon Timestream for efficient querying.
+- Hybrid Data Storage Approach
+  - Use DynamoDB for high-frequency trading data and S3 for long-term archival.
+    
 #### 4. Event-Driven Architecture for Scalability
-
+- Real-time Order Processing
+  - Use Kafka (MSK) + Kinesis for high-throughput event streaming.
+- Decoupled Event Processing
+  - Implement SQS + Lambda for asynchronous tasks (e.g., user notifications, reporting).
 
 #### 5. Security Scaling
-
+- Global DDoS Protection
+  - Use AWS Shield Advanced to mitigate large-scale attacks.
+- Web Security
+  - Use AWS WAF to scale protection against SQL Injection, bot attacks.
+- Secrets Management at Scale
+  - Implement AWS Secrets Manager for handling API keys, private keys.
 
 #### 6. Cost Optimization 
-
+- Spot Instances for Non-Critical Workloads
+  - Use EC2 Spot Instances for batch jobs, analytics processing.
+- Savings Plans & Reserved Instances
+  - Reserve Aurora PostgreSQL / EC2 instances for predictable workloads.
+- Serverless for Event-Driven Processes
+  - Utilize Lambda for low-volume background jobs.
 
 #### 7. Multi-region deployment
+Deploy a standby region with read replicas for failover.
