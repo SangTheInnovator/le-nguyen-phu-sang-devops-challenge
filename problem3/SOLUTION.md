@@ -24,12 +24,18 @@ You are working as a DevOps Engineer on a cloud-based infrastructure where a vir
   => If multiple worker processes are consuming high memory, it may be due to too many open connections or misconfiguration.
   
 #### Step 2: Identify the root cause & Fix It
-**Possible Issues & How to fix them**
+##### Possible Issues & How to fix them**
 
-Issue 1: NGINX Using too much memory (Misconfiguration)
-Issue 2: High traffic overloading NGINX
-Issue 3: Memory Leak in NGINX or Caching Issues
-
+**Issue 1: NGINX Using too much memory (Misconfiguration)**
+  - Possible Cause: 
+  - Fix:
+**Issue 2: High traffic overloading NGINX**
+  - Possible Cause: 
+  - Fix:
+**Issue 3: Memory Leak in NGINX or Caching Issues**
+  - Possible Cause: 
+  - Fix:
+    
 #### Step 3: Validate and Monitoring
 After implementing the above fixes, continuosly monitor the memory usage:
 ```bash
