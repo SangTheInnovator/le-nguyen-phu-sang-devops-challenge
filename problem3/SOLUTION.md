@@ -1,4 +1,4 @@
-### Troubleshooting steps for high memory usage on NGINX Load Balancer VM.
+### Troubleshooting steps for high memory usage on NGINX Load Balancer VM
 
 #### Scenario
 You are working as a DevOps Engineer on a cloud-based infrastructure where a virtual machine (VM), running Ubuntu 24.04, with 64GB of storage is under your management. Recently, your monitoring tools have reported that the VM is consistently running at 99% memory usage. This VM is responsible for only running one service - a NGINX load balancer as a traffic router for upstream services.
@@ -29,9 +29,11 @@ You are working as a DevOps Engineer on a cloud-based infrastructure where a vir
 **Issue 1: NGINX Using too much memory (Misconfiguration)**
   - Possible Cause: 
   - Fix:
+    
 **Issue 2: High traffic overloading NGINX**
   - Possible Cause: 
   - Fix:
+    
 **Issue 3: Memory Leak in NGINX or Caching Issues**
   - Possible Cause: 
   - Fix:
