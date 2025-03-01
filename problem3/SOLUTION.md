@@ -27,8 +27,14 @@ You are working as a DevOps Engineer on a cloud-based infrastructure where a vir
 ##### Possible Issues & How to fix them
 
 ##### Issue 1: NGINX Using too much memory (Misconfiguration)
-  - Possible Cause: 
+  - Possible Cause: Too many worker processes using excessive memory.
   - Fix:
+    - 1. Edit NGINX Configuration:
+         Open the config file:
+         ```bash
+         sudoq nanqqqqqoqqqqqqqqqq qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+         ```
+    - 2. 
     
 ##### Issue 2: High traffic overloading NGINX
   - Possible Cause: 
