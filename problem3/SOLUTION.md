@@ -28,7 +28,7 @@ You are working as a DevOps Engineer on a cloud-based infrastructure where a vir
 
 ##### Issue 1: NGINX Using too much memory (Misconfiguration)
   - Possible Cause: Too many worker processes using excessive memory.
-   qqqqqqqq
+   
   - Fix:
     - 1. Edit NGINX Configuration:
          Open the config file:
@@ -55,7 +55,7 @@ You are working as a DevOps Engineer on a cloud-based infrastructure where a vir
          ```bash
          sudo tail -f /var/log/nginx/access.log
          ```
-         - If you see too many requests from one IP, it could be a DDoS attack or       misbehaving client.
+         - If you see too many requests from one IP, it could be a DDoS attack or misbehaving client.
          
     - 2. Limit connections per IP:
       - Add this in **/etc/nginx/nginx.conf** file:
@@ -74,8 +74,23 @@ You are working as a DevOps Engineer on a cloud-based infrastructure where a vir
 ##### Issue 3: Memory Leak in NGINX or Caching Issues
   - Possible Cause: A bad NGINX module (like Lua or Proxy Buffers) is consuming memory.
     
-  - Fix: 
+  - Fix:
+    - 1. Check NGINX cache usage:
+         ```bash
+         du -sh /var/cache/nginx/
+         ```
+         - If cache size is too large, you might need to clear or disable it.
     
+    - 2. Disable Proxy Buffers 
+         - Open **/etc/nginx/nginx.conf** and modify:
+           ```bash
+           proxy_buffering off;
+           ```
+         - Restart NGINX:
+           ```bash
+           sudo systemctl restart nginx
+           ```
+           
 #### Step 3: Validate and Monitoring
 After implementing the above fixes, continuosly monitor the memory usage:
 ```bash
