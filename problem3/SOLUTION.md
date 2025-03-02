@@ -32,13 +32,30 @@ You are working as a DevOps Engineer on a cloud-based infrastructure where a vir
     - 1. Edit NGINX Configuration:
          Open the config file:
          ```bash
-         sudoq nanqqqqqoqqqqqqqqqq qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+         sudo nano /etc/nginx/nginx.conf
          ```
-    - 2. 
-    
+         Finding:
+         ```
+         worker_processes auto;
+         worker_connections 1024;
+         ```
+         - Reduce worker_connections if it's too high.
+         - Set worker_processes to auto (it automatically adjusts based on CPU).
+    - 2. Restart NGINX
+         ```bash
+         sudo systemctl restart nginx
+         ```
+         
 ##### Issue 2: High traffic overloading NGINX
-  - Possible Cause: 
+  - Possible Cause: Too many incoming requests, causing NGINX to hold too many open connections.
+
   - Fix:
+    - 1. Check Real-Time Requests:
+         ```bash
+         sudo tail -f /var/log/nginx/access.log
+         ```
+         => If you see too many requests from one IP, it could be a DDoS attack or       misbehaving client.
+    - 2. Limit connections per IP:
     
 ##### Issue 3: Memory Leak in NGINX or Caching Issues
   - Possible Cause: 
