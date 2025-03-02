@@ -28,6 +28,7 @@ You are working as a DevOps Engineer on a cloud-based infrastructure where a vir
 
 ##### Issue 1: NGINX Using too much memory (Misconfiguration)
   - Possible Cause: Too many worker processes using excessive memory.
+   qqqqqqqq
   - Fix:
     - 1. Edit NGINX Configuration:
          Open the config file:
@@ -71,7 +72,8 @@ You are working as a DevOps Engineer on a cloud-based infrastructure where a vir
         sudo systemctl restart nginx
         ```
 ##### Issue 3: Memory Leak in NGINX or Caching Issues
-  - Possible Cause: 
+  - Possible Cause: A bad NGINX module (like Lua or Proxy Buffers) is consuming memory.
+    
   - Fix:
     
 #### Step 3: Validate and Monitoring
