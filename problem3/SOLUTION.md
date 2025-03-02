@@ -55,8 +55,21 @@ You are working as a DevOps Engineer on a cloud-based infrastructure where a vir
          sudo tail -f /var/log/nginx/access.log
          ```
          => If you see too many requests from one IP, it could be a DDoS attack or       misbehaving client.
+         
     - 2. Limit connections per IP:
-    
+      - Add this in /etc/nginx/nginx.conf file:
+        ```nginx
+        limit_req_zone $binary_remote_addr zone=one:10m rate=10r/s;
+        server {
+        location / {
+            limit_req zone=one burst=20 nodelay;
+          }
+        }
+        ```
+        Restart NGINX:
+        ```bash
+        sudo systemctl restart nginx
+        ```
 ##### Issue 3: Memory Leak in NGINX or Caching Issues
   - Possible Cause: 
   - Fix:
